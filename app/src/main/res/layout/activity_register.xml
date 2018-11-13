@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:padding="16dp">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/correo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/correo_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su correo electronico" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tipo_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/correo_layout"
+        android:layout_above="@+id/motivo1_input"
+        android:layout_marginBottom="16dp">
+
+    <Spinner
+        android:id="@+id/tipo_input1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/tipo_input"
+        android:layout_above="@+id/gps_al"
+        android:layout_marginBottom="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/motivo1_input"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="top"
+            android:hint="Ingrese el motivo de la solicitud"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/gps_al"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/motivo1_input"
+        android:layout_above="@+id/register_button"
+        android:layout_marginBottom="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp">
+        <android.support.v7.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/gps"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.AppCompatImageButton
+            android:onClick="buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_map"
+            />
+        </LinearLayout>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:drawableRight="@android:drawable/ic_menu_save"
+        android:text="Registrar"
+        android:onClick="callRegister"/>
+
+</RelativeLayout>
